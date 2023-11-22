@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  solicitudes:
+    build:
+      context: .
+      dockerfile: build/Dockerfile
+    ports:
+      - "40401:8080"
+    networks:
+      - my_network
+  solicitudes-mongo:
+    image: mongo:4.4.18
+    ports:
+      - "40402:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - solicitudes-mongodata:/data/db
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    name: my_network
+    external: true

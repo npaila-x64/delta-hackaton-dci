@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  transcription:
+    build:
+      context: .
+      dockerfile: build/Dockerfile
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    ports:
+      - "30301:8080"
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    name: my_network
+    external: true

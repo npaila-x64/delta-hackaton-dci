@@ -1,0 +1,29 @@
+.container {
+    width: 310%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.siguiente-btn {
+    margin-left: 10px;
+    background-color: #5ce301;
+    color: white;
+    border: none;
+    padding: 7px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.siguiente-btn:hover {
+    background-color: rgb(69, 179, 0);
+}
+
+.bottom {
+    display: flex;
+    justify-content:flex-end; /* centers horizontally */
+    margin-left: auto;
+}

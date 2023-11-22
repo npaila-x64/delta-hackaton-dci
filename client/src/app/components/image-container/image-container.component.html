@@ -1,0 +1,14 @@
+<div class="container">
+    <div id="image-container">
+        <div *ngIf="imageUrl">
+            <img id="image" [src]="imageUrl" [style.transform]="imageTransform" alt="Zoomable Image">
+        </div>
+    </div>
+    
+    <div id="controls">
+        <button id="zoom-in" (click)="zoomIn()">+</button>
+        <button id="zoom-out" (click)="zoomOut()">-</button>
+    </div>
+    
+    <button class="transcription-btn">TRANSCRIBIR</button>
+</div>
