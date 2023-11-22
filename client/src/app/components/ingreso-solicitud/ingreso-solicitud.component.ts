@@ -7,7 +7,13 @@ import { FormService } from 'src/app/services/form/form.service';
   styleUrls: ['./ingreso-solicitud.component.css']
 })
 export class IngresoSolicitudComponent {
+  isLoading: boolean = false;
 
-  constructor(formService: FormService) { }
+  constructor(private formService: FormService) {
+    this.formService.loadingSubject.subscribe((isLoading: boolean) => {
+      console.log('isLoading:', isLoading);
+      this.isLoading = isLoading;
+    });
+  }
 
 }

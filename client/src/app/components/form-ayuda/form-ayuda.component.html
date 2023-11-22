@@ -2,30 +2,30 @@
     <div class="datos-header">DATOS</div>
     <div class="form-group">
         <label for="nombres">Nombres</label>
-        <input type="text" id="nombres">
+        <input type="text" id="nombres" [(ngModel)]="nombres">
     </div>
     <div class="form-group">
         <label for="apellidoPaterno">Apellido Paterno</label>
-        <input type="text" id="apellidoPaterno">
+        <input type="text" id="apellidoPaterno" [(ngModel)]="apellidoPaterno">
     </div>
     <div class="form-group">
         <label for="apellidoMaterno">Apellido Materno</label>
-        <input type="text" id="apellidoMaterno">
+        <input type="text" id="apellidoMaterno" [(ngModel)]="apellidoMaterno">
     </div>
     <div class="form-group">
         <label for="rut">RUT</label>
-        <input type="text" id="rut">
+        <input type="text" id="rut" [(ngModel)]="rut">
     </div>
     <div class="form-group">
         <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" placeholder="+56">
+        <input type="tel" id="telefono" [(ngModel)]="telefono">
     </div>
     <div class="form-group">
-        <label for="direccion">Nombre de la unidad</label>
-        <input type="text" id="direccion">
+        <label for="unidad">Nombre de la unidad</label>
+        <input type="text" id="unidad" [(ngModel)]="unidad">
     </div>
     <div class="form-group">
         <label for="montoPalabras">Monto en palabras</label>
-        <input type="text" id="montoPalabras">
+        <input type="text" id="montoPalabras" [(ngModel)]="monto">
     </div>
 </div>

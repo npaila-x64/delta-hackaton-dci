@@ -9,6 +9,8 @@ import { ImageContainerComponent } from './components/image-container/image-cont
 import { IngresoSolicitudComponent } from './components/ingreso-solicitud/ingreso-solicitud.component';
 import { ScanBarComponent } from './components/scan-bar/scan-bar.component';
 import { FormContainerComponent } from './components/form-container/form-container.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormContainerComponent } from './components/form-container/form-contain
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

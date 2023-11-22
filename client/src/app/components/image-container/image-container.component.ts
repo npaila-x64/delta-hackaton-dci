@@ -8,12 +8,11 @@ import { FormService } from 'src/app/services/form/form.service';
 })
 export class ImageContainerComponent {
   zoomLevel = 1;
-  imageUrl = 'https://www.w3schools.com/css/img_5terre.jpg';
+  imageUrl = '';
   imageTransform = 'scale(1)';
 
   constructor(private formService: FormService) {
     this.formService.imageUrlSubject.subscribe((imageUrl: string) => {
-      console.log('Image URL:', imageUrl);
       this.imageUrl = imageUrl;
     });
   }
@@ -30,6 +29,10 @@ export class ImageContainerComponent {
 
   updateZoom() {
     this.imageTransform = `scale(${this.zoomLevel})`;
+  }
+
+  transcribeImage() {
+    this.formService.transcribeImage();
   }
 
 }

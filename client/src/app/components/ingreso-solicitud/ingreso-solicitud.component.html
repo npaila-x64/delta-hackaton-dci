@@ -2,4 +2,11 @@
     <app-scan-bar></app-scan-bar>
     <app-transcription-area></app-transcription-area>
 </div>
+
+<div *ngIf="isLoading">
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+</div>
+
 <router-outlet></router-outlet>

@@ -7,7 +7,7 @@ from openai import OpenAI # OpenAI official Python package
 
 from app.models import EncodedImage
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 
 client = OpenAI(
     api_key=os.getenv("openaikey"))
@@ -37,7 +37,7 @@ def process_image(encoded_image: EncodedImage):
                     {
                         "type": "text",
                         "text": """
-                        ¿Puedes transcribir la siguiente imagen en un formato JSON correctamente formateado, enfocándote en cada campo y asegurándote de que sea exactamente lo que dice la imagen? Asegúrate de que el JSON esté correctamente formateado según los estándares para este formato. Solo dame el JSON como respuesta para copiarlo y pegarlo para su posterior uso.
+¿Puedes transcribir la siguiente imagen en un formato JSON correctamente formateado, enfocándote en cada campo, es decir, APELLIDO PATERNO, APELLIDO MATERNO, NOMBRES, RUT, ESPECIALIDAD DEL FUNCIONARIO, AÑOS DE SERVICIOS, NOMBRE DE LA UNIDAD, TELÉFONO, MONTO. y asegurándote de que sea exactamente lo que dice la imagen? Asegúrate de que el JSON esté correctamente formateado según los estándares para este formato. Solo dame el JSON como respuesta para copiarlo y pegarlo para su posterior uso.
                         """
                     },
                     {
