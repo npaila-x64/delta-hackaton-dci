@@ -12,9 +12,11 @@ export class FormAyudaComponent {
   apellidoPaterno: string = ''
   apellidoMaterno: string = ''
   rut: string = ''
+  especialidad: string = ''
   telefono: string = ''
   unidad: string = ''
-  monto: string = ''
+  detalle: string = ''
+  peticion: string = ''
 
   constructor(private formService: FormService) {
     this.formService.solicitudSubject.subscribe((solicitud: Solicitud) => {
@@ -23,9 +25,11 @@ export class FormAyudaComponent {
       this.apellidoPaterno = solicitud.apellidoPaterno;
       this.apellidoMaterno = solicitud.apellidoMaterno;
       this.rut = solicitud.rut;
+      this.especialidad = solicitud.especialidad;
       this.telefono = solicitud.telefono;
       this.unidad = solicitud.nombreDeLaUnidad;
-      this.monto = solicitud.montoEnPalabras;
+      this.detalle = solicitud.detalle;
+      this.peticion = solicitud.peticion;
     });
   }
 

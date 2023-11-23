@@ -13,44 +13,42 @@ export class FormService {
   private selectedFile: File | null = null;
 
   solicitud: Solicitud = {
-    id: 0,
+    id: '-',
     nombres: '',
     apellidoPaterno: '',
     apellidoMaterno: '', 
     rut: '',
     telefono: '',
     nombreDeLaUnidad: '',
-    montoEnPalabras: ''
+    especialidad: '',
+    detalle: '',
+    peticion: '',
+    estado: 'Por evaluar'
   };
 
   constructor(private http: HttpClient) { }
 
-  processForm() {
-    console.log('FormService initialized');
-    const solicitudObject = {
-      "DEPARTAMENTO RECURSOS HUMANOS": "PRO DRH 21",
-      "DEPARTAMENTO BIENESTAR SOCIAL": "",
-      "ANEXO C": "",
-      "CERTIFICADO DE AYUDA ECONÓMICA N°": "",
-      "CERTIFICACION": "EL/LA JEFE/A O ENCARGADO/A DEL DEPARTAMENTO DE BIENESTAR SOCIAL DE LA DIRECCIÓN GENERAL DE AERONAUTICA CIVIL QUE SUSCRIBE, CERTIFICA QUE HA OTORGADO UNA AYUDA ECONÓMICA AL FUNCIONARIO QUE A CONTINUACIÓN SE INDICA POR EL MONTO QUE SE INDICA:",
-      "IDENTIFICACIÓN DEL SOLICITANTE": {
-          "APELLIDO PATERNO": "Molina",
-          "APELLIDO MATERNO": "Perez",
-          "NOMBRES": "Sebastian Alfonso",
-          "RUT": "17.678.519-4",
-          "ESPECIALIDAD DEL FUNCIONARIO": "Mecánico",
-          "AÑOS DE SERVICIOS": "",
-          "NOMBRE DE LA UNIDAD": "Operación de Planta",
-          "TELÉFONO": "+56976489179"
-      },
-      "MONTO": "Un Millón de pesos chilenos",
-      "OBSERVACIONES": "PREVIO ESTUDIO DE LA SOLICITUD PRESENTADA Y DEL INFORME SOCIAL DEL DEPARTAMENTO BIENESTAR SOCIAL.",
-      "FIRMA FUNCIONARIO/A": "",
-      "ASISTENTE SOCIAL FIRMA Y TIMBRE": "",
-      "JEFE/A O ENCARGADO/A DEPTO. BIENESTAR SOCIAL": "",
-      "Página": "18",
-      "Enmienda": "Enm.2 ED.3/JUL 2020"
+  ingresarSolicitud() {
+    const body = {
+      "nombres": this.solicitud.nombres,
+      "apellidoPaterno": this.solicitud.apellidoPaterno,
+      "apellidoMaterno":  this.solicitud.apellidoMaterno,
+      "rut": this.solicitud.rut,
+      "especialidad": this.solicitud.especialidad,
+      "nombreDeLaUnidad": this.solicitud.nombreDeLaUnidad,
+      "telefono": this.solicitud.telefono,
+      "detalle": this.solicitud.detalle,
+      "peticion": this.solicitud.peticion,
     }
+    console.log('Ingresando solicitud', body);
+    this.http.post<any>('http://localhost:40401/solicitudes', body).subscribe(
+      (data: any) => {
+        console.log('Solicitud ingresada', data);
+      },
+      error => {
+        console.error('Error ingresando solicitud', error);
+      }
+    );
   }
 
   displaySolicitud(solicitudObject: any) {
@@ -60,7 +58,9 @@ export class FormService {
     this.solicitud['rut'] = solicitudObject['RUT'];
     this.solicitud['telefono'] = solicitudObject['TELÉFONO'];
     this.solicitud['nombreDeLaUnidad'] = solicitudObject['NOMBRE DE LA UNIDAD'];
-    this.solicitud['montoEnPalabras'] = solicitudObject['MONTO'];
+    this.solicitud['especialidad'] = solicitudObject['ESPECIALIDAD DEL FUNCIONARIO'];
+    this.solicitud['detalle'] = solicitudObject['DETALLE SITUACIÓN ECONOMICA'];
+    this.solicitud['peticion'] = solicitudObject['PETICIÓN ESPECÍFICA'];
     this.solicitudSubject.next(this.solicitud);
   }
 

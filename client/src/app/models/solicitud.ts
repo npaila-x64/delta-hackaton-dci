@@ -1,10 +1,13 @@
 export interface Solicitud {
-    id: number;
+    id: string;
     nombres: string; 
     apellidoPaterno: string; 
     apellidoMaterno: string; 
     rut: string; 
+    especialidad: string;
     telefono: string; 
     nombreDeLaUnidad: string; 
-    montoEnPalabras: string; 
+    detalle: string;
+    peticion: string;
+    estado : string;
 }

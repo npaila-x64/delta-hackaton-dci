@@ -34,3 +34,26 @@ input[type="tel"] {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+.btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btns button {
+    margin: 0 5px;
+    font-size: large;
+    margin-left: 10px;
+    background-color: rgb(1, 148, 227);
+    color: white;
+    border: none;
+    padding: 7px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btns button:hover {
+    background-color: rgb(0, 57, 179);
+}
+

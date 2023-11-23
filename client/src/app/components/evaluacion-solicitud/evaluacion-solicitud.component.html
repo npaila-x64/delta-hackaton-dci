@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+        <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" id="nombres" [(ngModel)]="nombres">
+        </div>
+        <div class="form-group">
+            <label for="apellidoPaterno">Apellido Paterno</label>
+            <input type="text" id="apellidoPaterno" [(ngModel)]="apellidoPaterno">
+        </div>
+        <div class="form-group">
+            <label for="apellidoMaterno">Apellido Materno</label>
+            <input type="text" id="apellidoMaterno" [(ngModel)]="apellidoMaterno">
+        </div>
+        <div class="form-group">
+            <label for="rut">RUT</label>
+            <input type="text" id="rut" [(ngModel)]="rut">
+        </div>
+        <div class="form-group">
+            <label for="especialidad">Especialidad</label>
+            <input type="text" id="especialidad" [(ngModel)]="especialidad">
+        </div>
+        <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" [(ngModel)]="telefono">
+        </div>
+        <div class="form-group">
+            <label for="unidad">Nombre de la unidad</label>
+            <input type="text" id="unidad" [(ngModel)]="unidad">
+        </div>
+        <div class="form-group">
+            <label for="detalle">Detalles de la situación</label>
+            <textarea type="text" id="detalle" [(ngModel)]="detalle" class="text-area"></textarea>
+        </div>
+    </div>
+    <div class="btns">
+        <button class="btn btn-primary" (click)="aceptarSolicitud()">Aceptar</button>
+        <button class="btn btn-primary" (click)="rechazarSolicitud()">Rechazar</button>
+    </div>
+</div>

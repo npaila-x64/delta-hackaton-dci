@@ -11,6 +11,8 @@ import { ScanBarComponent } from './components/scan-bar/scan-bar.component';
 import { FormContainerComponent } from './components/form-container/form-container.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
+import { EvaluacionSolicitudComponent } from './components/evaluacion-solicitud/evaluacion-solicitud.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     ImageContainerComponent,
     IngresoSolicitudComponent,
     ScanBarComponent,
-    FormContainerComponent
+    FormContainerComponent,
+    SolicitudesComponent,
+    EvaluacionSolicitudComponent
   ],
   imports: [
     BrowserModule,

@@ -23,10 +23,10 @@ down:
 # Remove all db data
 .PHONY: remove-data
 remove-data:
-	@if [ $$(docker volume ls -q -f name=solicitudes-service_index-db) ]; then \
-		docker volume rm solicitudes-service_index-db; \
+	@if [ $$(docker volume ls -q -f name=solicitudes-service_solicitudes-mongodata) ]; then \
+		docker volume rm solicitudes-service_solicitudes-mongodata; \
 	else \
-		echo "Volume solicitudes-service_index-db does not exist, skipping removal"; \
+		echo "Volume solicitudes-service_solicitudes-mongodata does not exist, skipping removal"; \
 	fi
 
 # Remove all older setup and start fresh services

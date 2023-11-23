@@ -37,7 +37,7 @@ def process_image(encoded_image: EncodedImage):
                     {
                         "type": "text",
                         "text": """
-¿Puedes transcribir la siguiente imagen en un formato JSON correctamente formateado, enfocándote en cada campo, es decir, APELLIDO PATERNO, APELLIDO MATERNO, NOMBRES, RUT, ESPECIALIDAD DEL FUNCIONARIO, AÑOS DE SERVICIOS, NOMBRE DE LA UNIDAD, TELÉFONO, MONTO. y asegurándote de que sea exactamente lo que dice la imagen? Asegúrate de que el JSON esté correctamente formateado según los estándares para este formato. Solo dame el JSON como respuesta para copiarlo y pegarlo para su posterior uso.
+¿Puedes transcribir la siguiente imagen en un formato JSON correctamente formateado, enfocándote en cada campo, es decir, APELLIDO PATERNO, APELLIDO MATERNO, NOMBRES, RUT, ESPECIALIDAD DEL FUNCIONARIO, AÑOS DE SERVICIOS, NOMBRE DE LA UNIDAD, TELÉFONO, MONTO, DETALLE SITUACIÓN ECONOMICA y PETICIÓN ESPECÍFICA? Por favor, Asegurate de que sea exactamente lo que dice la imagen, tambien Asegúrate de que el JSON esté correctamente formateado según los estándares para este formato. Solo dame el JSON como respuesta para copiarlo y pegarlo para su posterior uso.
                         """
                     },
                     {

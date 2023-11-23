@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormService } from 'src/app/services/form/form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-container',
@@ -8,10 +9,10 @@ import { FormService } from 'src/app/services/form/form.service';
 })
 export class FormContainerComponent {
 
-  constructor(private formService: FormService) { }
+  constructor(private formService: FormService, private router: Router) { }
 
-  processForm() {
-    this.formService.processForm();
+  ingresarSolicitud(): void {
+    this.formService.ingresarSolicitud();
+    this.router.navigate(['/solicitudes']);
   }
-
 }

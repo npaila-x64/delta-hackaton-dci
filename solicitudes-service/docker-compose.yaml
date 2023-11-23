@@ -4,8 +4,10 @@ services:
     build:
       context: .
       dockerfile: build/Dockerfile
+    depends_on:
+      - solicitudes-mongo
     ports:
-      - "40401:8080"
+      - "40401:40401"
     networks:
       - my_network
   solicitudes-mongo:
@@ -19,6 +21,9 @@ services:
       - solicitudes-mongodata:/data/db
     networks:
       - my_network
+
+volumes:
+  solicitudes-mongodata:
 
 networks:
   my_network:

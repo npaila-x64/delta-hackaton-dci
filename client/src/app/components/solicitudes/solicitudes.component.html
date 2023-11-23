@@ -1,0 +1,27 @@
+<div class="container">
+    <button (click)="agregarSolicitud()" class="agregar-solicitud-btn">Agregar Solicitud</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Solicitud</th>
+                <th>Estado de la Solicitud</th>
+                <th>Opción a realizar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let solicitud of solicitudes" (click)="evaluarSolicitud(solicitud.id)">
+                <td>{{ solicitud.id }}</td>
+                <td>{{ solicitud.estado }}</td>
+                <td>
+                    <button *ngIf="solicitud.estado === 'Por evaluar'" class="evaluar-btn">
+                        Evaluar
+                    </button>
+                    <button *ngIf="solicitud.estado !== 'Por evaluar'" disabled>
+                        {{ solicitud.estado === 'Aceptado' ? 'Aceptado' : 'Rechazado' }}
+                    </button>
+                    <span *ngIf="solicitud.estado === 'Sin opción disponible'">Sin opción disponible</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
