@@ -17,7 +17,7 @@
                         Evaluar
                     </button>
                     <button *ngIf="solicitud.estado !== 'Por evaluar'" disabled>
-                        {{ solicitud.estado === 'Aceptado' ? 'Aceptado' : 'Rechazado' }}
+                        {{ solicitud.estado === 'Aceptada' ? 'Aceptada' : 'Rechazado' }}
                     </button>
                     <span *ngIf="solicitud.estado === 'Sin opción disponible'">Sin opción disponible</span>
                 </td>
